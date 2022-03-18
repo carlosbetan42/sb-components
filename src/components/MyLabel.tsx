@@ -21,13 +21,25 @@ export interface Props {
    * Color personalizado de la fuente
    */
   fontColor?: string;
+  /**
+   * Color de fondo personalizado de la fuente
+   */
+  backgroundColor?: string;
 }
 
-const MyLabel = ({ label = "No Label", size = "normal", allCaps = false, color = "primary", fontColor = "" }: Props) => {
+const MyLabel = ({
+  label = "No Label",
+  size = "normal",
+  allCaps = false,
+  color = "primary",
+  fontColor = "",
+  backgroundColor = "transparent",
+}: Props) => {
   return (
     <span
       style={{
         color: fontColor,
+        backgroundColor,
       }}
       className={`label ${size} text-${color}`}
     >
